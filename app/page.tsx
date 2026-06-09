@@ -1,3 +1,5 @@
+import ConsultationForm from './components/ConsultationForm';
+
 export default function Home() {
   const services = [
     {
@@ -171,49 +173,32 @@ export default function Home() {
             }}
           />
 
-          <div className="max-w-xl mx-auto text-center relative">
-            <div
-              className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 mb-6"
-              style={{
-                background: "rgba(145,70,255,0.2)",
-                color: "var(--color-twitch-purple-light)",
-                borderRadius: "var(--radius-pill)",
-                border: "1px solid rgba(145,70,255,0.3)",
-              }}
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full"
-                style={{ background: "var(--color-twitch-purple)" }}
-              />
-              함께 시작해요
+          <div className="max-w-xl mx-auto relative">
+            <div className="text-center mb-8">
+              <div
+                className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 mb-4"
+                style={{
+                  background: "rgba(145,70,255,0.2)",
+                  color: "var(--color-twitch-purple-light)",
+                  borderRadius: "var(--radius-pill)",
+                  border: "1px solid rgba(145,70,255,0.3)",
+                }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--color-twitch-purple)" }} />
+                함께 시작해요
+              </div>
+              <h2
+                className="text-3xl font-bold mb-3"
+                style={{ color: "var(--color-text-base)", letterSpacing: "-0.02em" }}
+              >
+                함께 시작할 준비가 되셨나요?
+              </h2>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-alt)" }}>
+                어떤 문의든 환영합니다. 저희 팀이 빠르게 답변드리겠습니다.
+              </p>
             </div>
 
-            <h2
-              className="text-3xl font-bold mb-4"
-              style={{ color: "var(--color-text-base)", letterSpacing: "-0.02em" }}
-            >
-              함께 시작할 준비가 되셨나요?
-            </h2>
-            <p className="text-sm leading-relaxed mb-10" style={{ color: "var(--color-text-alt)" }}>
-              어떤 문의든 환영합니다. 저희 팀이 빠르게 답변드리겠습니다.
-            </p>
-
-            <a href="mailto:hjun@skinami.co.kr" className="btn-primary">
-              문의하기
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
+            <ConsultationForm />
           </div>
         </section>
       </main>
