@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  --color-background-base: #0e0e10;
+  --color-background-alt: #18181b;
+  --color-background-alt-2: #1f1f23;
+  --color-background-hover: #26262c;
+  --color-background-input: #3d3d40;
+
+  --color-twitch-purple: #9146ff;
+  --color-twitch-purple-hover: #772ce8;
+  --color-twitch-purple-active: #5c16c5;
+  --color-twitch-purple-light: #bf94ff;
+  --color-twitch-purple-dark: #451093;
+
+  --color-text-base: #efeff1;
+  --color-text-alt: #adadb8;
+  --color-text-alt-2: #7c7c8a;
+  --color-text-link: #bf94ff;
+
+  --color-live: #eb0400;
+  --color-success: #00f593;
+  --color-border: #2d2d2f;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-pill: 9999px;
+
+  --nav-height: 50px;
+}
+
+@theme inline {
+  --color-background: var(--color-background-base);
+  --color-foreground: var(--color-text-base);
+  --font-sans: var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: var(--color-background-base);
+  color: var(--color-text-base);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-twitch-purple);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  transition: background-color 100ms ease;
+  text-decoration: none;
+}
+.btn-primary:hover { background: var(--color-twitch-purple-hover); }
+.btn-primary:active { background: var(--color-twitch-purple-active); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--color-twitch-purple-light);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border: 2px solid var(--color-twitch-purple);
+  border-radius: var(--radius-sm);
+  transition: background-color 100ms ease;
+  text-decoration: none;
+}
+.btn-secondary:hover { background: rgba(145, 70, 255, 0.15); }
+
+/* Nav */
+.nav-link {
+  color: var(--color-text-base);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  transition: color 100ms ease;
+  text-decoration: none;
+}
+.nav-link:hover { color: var(--color-twitch-purple-light); }
+
+/* Cards */
+.service-card {
+  background: var(--color-background-alt);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 24px;
+  transition: background 100ms ease, border-color 100ms ease, transform 100ms ease;
+}
+.service-card:hover {
+  background: var(--color-background-hover);
+  border-color: var(--color-twitch-purple);
+  transform: translateY(-4px);
+}
+
+/* Live badge pulse */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--color-live);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.live-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
